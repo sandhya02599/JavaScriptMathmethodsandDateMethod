@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetDate</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2{
+            color: rgb(20, 20, 20);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 30px;
+        }
+        #demo{
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>SetFullYear</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        const d = new Date();
+        d.setFullYear(2024);
+        document.getElementById("demo").innerHTML = d;
+
+                
+
+
+        // const currentDate = new Date();
+
+        // const year = currentDate.setFullYear();
+        // const month = currentDate.setMonth() + 1; 
+        // const day = currentDate.setDate();
+        // const hours = currentDate.setHours();
+        // const minutes = currentDate.setMinutes();
+        // const seconds = currentDate.setSeconds();
+
+        // const formattedDate = `${1}/${12}/${2024}`;
+        // const formattedTime = `${1}:${48}:${7}`;
+
+        // document.getElementById('demo').textContent = `Date: ${formattedDate}, Time: ${formattedTime}`;
+
+    </script>
+</body>
+</html>

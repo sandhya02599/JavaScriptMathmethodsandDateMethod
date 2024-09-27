@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #F86624;
+    color: #fff;
+}
+
+.nav-left {
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0 50px;
+    height: 70px;
+    font-size: 1.25rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+nav li {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+nav ul li:hover {
+    background-color: #1768AC;
+    border-radius: 10px;
+}
+
+nav ul li:active {
+    background-color: #111;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    left: 0;
+    background-color: #1768AC;
+    color: #fff;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav li {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.sidenav a:hover {
+    background-color: #111;
+}
+
+.sidenav ul li:hover {
+    background-color: rgb(245, 234, 234);
+    color: black;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.dark-theme:hover {
+    background-color: #1768AC;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.section {
+    background-color: #DEE7E7;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+.addition {
+    background-color: green;
+}
+
+.login-modal {
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#closeBtn {
+    float: right;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    color: red;
+}
+
+#loginSection {
+    display: none;
+    text-align: center;
+}
+
+.loginTitle {
+    text-align: center;
+}
+
+#loginBtn {
+    cursor: pointer;
+}
+
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.login-modal input[type="text"],
+.login-modal input[type="password"],
+.login-modal button {
+    margin-bottom: 10px;
+    width: 90%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#loginSubmit {
+    background-color: #1768AC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* #loginSubmit:hover {
+    background-color: #45a049;
+} */
+
+::placeholder {
+    font-size: 1.2rem;
+}
+
+#myForm {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.user-details {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+#myColors {
+    width: 200px;
+    font-size: large;
+    margin-left: 300px;
+}
+
+#box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid gray;
+    margin-left: 500px;
+}
+
+.mango {
+    display: none;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="company" class="nav-left" onmouseenter="changeCompany()" onmouseout="normal()">
+                Company
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li class="revenue">Revenue</li>
+                    <li class="sales">Sales</li>
+                    <li class="customers">Customers</li>
+                    <li class="reports">Reports</li>
+                    <li class="settings">Settings</li>
+                </ul>
+            </div>
+            <div class="dark-theme" onclick=darkTheme() ondblclick="lightTheme()">
+                Dark Theme
+            </div>
+            <div id="loginBtn">
+                Login
+            </div>
+            <!-- <button id="add-border">Add Border</button> -->
+
+            <button id="close">Close Sidebar</button>
+
+        </nav>
+    </header>
+    <div class="login-modal" id="loginSection">
+        <h3 class="loginTitle">Login</h3>
+        <div id="closeBtn">close</div>
+        <input type="text" placeholder="Enter your name"><br>
+        <input type="password" placeholder="Enter your password"><br>
+        <button id="loginSubmit">Submit</button>
+    </div>
+    <div class="sidenav">
+        <ul>
+            <li>Dashboard</li>
+            <li class="revenue">Revenue</li>
+            <li class="sales">Sales</li>
+            <li class="customers">Customers</li>
+            <li class="reports">Reports</li>
+            <li class="meetings">Meetings</li>
+            <li class="events">Events</li>
+            <li class="settings">Settings</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="section revenue" onmouseover="eleHover(this)" onmouseout="eleOut(this)">
+            <h2>Revenue</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="section sales" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+            <h2>Sales</h2>
+            <p>Ut euismod efficitur turpis, non tincidunt nibh volutpat sed.</p>
+        </div>
+        <div class="section" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+            <h2 class="customers">Customers</h2>
+            <p>Suspendisse semper ipsum eget neque malesuada auctor.</p>
+        </div>
+        <div class="section reports" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+            <h2>Reports</h2>
+            <p>Morbi id feugiat mauris, at tempus mi.</p>
+        </div>
+        <div class="section meetings" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+            <h2>Meetings</h2>
+            <p>Nulla facilisi. Vestibulum vitae eros nec lectus posuere ultricies.</p>
+        </div>
+        <div class="section events" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+            <h2>Events</h2>
+            <p>Quisque eu massa a mauris ultricies dapibus non vitae nulla.</p>
+        </div>
+
+
+        <script>
+            const openNav = document.getElementById("open")
+            const closeNav = document.getElementById("close")
+
+            const sideNavBar = document.querySelector(".sidenav")
+
+            closeNav.addEventListener('click', closeSideNavBar)
+
+            function closeSideNavBar() {
+              sideNavBar.classList.toggle("mango")
+            }
+
+        </script>
+</body>
+
+</html>
